@@ -28,4 +28,10 @@ function hideOverlay() {
 function showOverlay() {
 	overlay.style.display = "block";
 }
-void(0);
+
+try {
+	void(0);
+}
+catch(err) {
+	console.log(err);
+}
