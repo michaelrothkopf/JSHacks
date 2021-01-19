@@ -4,11 +4,11 @@ overlay.innerHTML = `
 <h1 style='color:white;'>Change website title and icon</h1><br>
 <input type='text' id='title' placeholder='New website title'>
 <input type='text' id='iconurl' placeholder='Url of the new website icon image'>
-<button onclick='changeAppearance31f(document.getElementById("title").value, document.getElementById("iconurl"))'>Change 'em!</button>
+<button onclick='changeAppearance31f(document.getElementById("title").value, document.getElementById("iconurl"))' style='background-color: #000000; color: #ffffff;'>Change 'em!</button>
 <br>
-<button onclick='hideOverlay()'>Close</button>
+<button onclick='hideOverlay()' style='background-color: #000000; color: #ffffff;'>Close</button>
 `;
-overlay.style.cssText = "text-align:center;jusitfy-content:center;position: fixed;display: block;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;background-color: rgba(0,0,0,0.5);z-index: 100;cursor: pointer;";
+overlay.style.cssText = "text-align:center;jusitfy-content:center;position: fixed;display: block;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;background-color: rgba(0,0,0,0.75);z-index: 100;cursor: pointer;";
 document.body.appendChild(overlay);
 
 function changeAppearance31f(title, icon) {
