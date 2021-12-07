@@ -8,8 +8,8 @@ function main()
 
     function disableEdit()
     {
-        document.body.contentEditable = "true";
-        document.designMode = "on";
+        document.body.contentEditable = "false";
+        document.designMode = "off";
     }
 
     function changeTitle(newTitle)
