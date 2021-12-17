@@ -28,35 +28,61 @@ function main()
           }
         }
     }
-
-    let option = prompt("JSHacks: Main Menu\nOptions:\n1) Quick change title and favicon\n2) Custom title change\n3) Custom favicon change\n4) Custom title and favicon change\n5) Enable edit mode\n6) Disable edit mode", "1");
-
-    if (option == "1")
+    
+    class Option
     {
+        title = "";
+        callback: () => {};
+        
+        constructor(title, callback)
+        {
+            this.title = title;
+            this.callback = callback;
+        }
+    }
+    
+    class OptionsMenu
+    {
+        options = [];
+        
+        addOption(title, callback)
+        {
+            this.options.push(new Option(title, callback));
+        }
+        
+        prompt() {
+            let promptString = "";
+            
+        }
+    }
+    
+    menu = new OptionsMenu();
+    
+    menu.addOption("Quick change title and favicon", () => {
         changeTitle("Home | Schoology");
         changeFavicon("https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico");
     }
-    else if (option == "2")
-    {
+                   
+    menu.addOption("Custom title change", () => {
         changeTitle(prompt("New title:"));
-    }
-    else if (option == "3")
-    {
-        changeFavicon(prompt("New favicon:"));
-    }
-    else if (option == "4")
-    {
+    });
+    
+    menu.addOption("Custom favicon change", () => {
+        changeTitle(prompt("New favicon:"));
+    });
+    
+    menu.addOption("Custom title and favicon change", () => {
         changeTitle(prompt("New title:"));
         changeFavicon(prompt("New favicon:"));
-    }
-    else if (option == "5")
-    {
+    });
+    
+    menu.addOption("Enable edit mode", () => {
         enableEdit();
-    }
-    else if (option == "6")
-    {
+    });
+    
+    menu.addOption("Disable edit mode", () => {
         disableEdit();
-    }
+    });
 }
 
 main();
