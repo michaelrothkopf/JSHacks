@@ -55,7 +55,7 @@ function main()
         inspectElementEditBox.setAttribute("autocomplete", "off");
         inspectElementEditBox.setAttribute("autocorrect", "off");
         inspectElementEditBox.setAttribute("autocapitalize", "off");
-        inspectElementEditBox.setAttribute("spellcheck", "off");
+        inspectElementEditBox.setAttribute("spellcheck", "false");
         inspectElementEditBox.style.flex = "6";
 
         inspectElement.appendChild(inspectElementEditBox);
