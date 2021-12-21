@@ -143,6 +143,10 @@ function main()
         disableEdit();
     });
     
+    menu.addOption("Inspect element simulator", () => {
+        addInspectElement();
+    });
+    
     menu.prompt();
 }
 
