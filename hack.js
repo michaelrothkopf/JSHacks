@@ -84,9 +84,6 @@ function main()
     
     class Option
     {
-        title = "";
-        callback: () => {};
-        
         constructor(title, callback)
         {
             this.title = title;
@@ -96,7 +93,10 @@ function main()
     
     class OptionsMenu
     {
-        options = [];
+        constructor()
+        {
+            this.options = [];
+        }
         
         addOption(title, callback)
         {
@@ -120,7 +120,7 @@ function main()
     menu.addOption("Quick change title and favicon", () => {
         changeTitle("Home | Schoology");
         changeFavicon("https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico");
-    }
+    });
                    
     menu.addOption("Custom title change", () => {
         changeTitle(prompt("New title:"));
