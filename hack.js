@@ -142,6 +142,8 @@ function main()
     menu.addOption("Disable edit mode", () => {
         disableEdit();
     });
+    
+    menu.prompt();
 }
 
 main();
