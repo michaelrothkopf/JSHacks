@@ -37,6 +37,7 @@ function main()
         inspectElement.style.flexDirection = "column";
         inspectElement.style.padding = ".5rem";
         inspectElement.style.minHeight = "500px";
+        inspectElement.style.fontFamily = "default";
 
         const inspectElementTitleBox = document.createElement("p");
         inspectElementTitleBox.style.padding = "2px";
