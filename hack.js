@@ -144,7 +144,7 @@ function main()
         disableEdit();
     });
     
-    menu.addOption("Inspect element simulator", () => {
+    menu.addOption("[BETA] [UNSTABLE] Inspect element", () => {
         addInspectElement();
     });
     
