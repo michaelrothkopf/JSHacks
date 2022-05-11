@@ -1,5 +1,7 @@
 function main()
 {
+    const VERSION = "1.0.0";
+    
     function enableEdit()
     {
         document.body.contentEditable = "true"; 
@@ -104,8 +106,11 @@ function main()
             this.options.push(new Option(title, callback));
         }
         
-        prompt() {
-            let promptString = "JSMenu";
+        async prompt() {
+            const newVersion_rq = await fetch("https://raw.githubusercontent.com/mrbros35/JSHacks/master/VERSION.txt");
+            const newVersion = (await newVersion_rq.text()).slice(0, -1);
+            const upToDate = newVersion == VERSION;
+            let promptString = "JSMenu " + VERSION + (upToDate ? " | Up-to-date" : " | NEW VERSION AVAILABLE (" + newVersion + ")");
             let i = 0;
             for (const option of this.options)
             {
