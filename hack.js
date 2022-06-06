@@ -1,6 +1,6 @@
 function main()
 {
-    const VERSION = "1.0.0";
+    const VERSION = "1.0.1";
     
     function enableEdit()
     {
@@ -24,7 +24,8 @@ function main()
         const findlink = document.getElementsByTagName("link");
         for (const lnkelem of findlink)
         {
-          if (lnkelem.rel === "shortcut icon" || lnkelem.rel === "icon")
+          if (lnkelem.rel === "shortcut icon" || lnkelem.rel === "icon"
+              || lnkelem.rel === "fluid-icon")
           {
             lnkelem.href = newFavicon;
           }
