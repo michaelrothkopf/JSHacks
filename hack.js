@@ -25,7 +25,7 @@ function main()
         for (const lnkelem of findlink)
         {
           if (lnkelem.rel === "shortcut icon" || lnkelem.rel === "icon"
-              || lnkelem.rel === "fluid-icon")
+              || lnkelem.rel === "fluid-icon" || lnkelem.rel.includes("icon"))
           {
             lnkelem.href = newFavicon;
           }
