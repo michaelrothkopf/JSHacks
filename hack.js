@@ -1,5 +1,5 @@
 (function () {
-    const VERSION = "1.1.1";
+    const VERSION = "1.1.2";
     
     function enableEdit()
     {
@@ -32,10 +32,10 @@
     }
     
     function scanLocalStorage() {
-      let lsitems = [];
+      let lsitems = "";
 
       for (let i = 0; i < localStorage.length; i++) {
-        lsitems.push(localStorage.key(i));
+        lsitems += localStorage.key(i) + "\n";
       }
       
       alert(lsitems);
