@@ -1,11 +1,10 @@
-function main()
-{
-    const VERSION = "1.0.1";
+(function () {
+    const VERSION = "1.1.0";
     
     function enableEdit()
     {
-        document.body.contentEditable = "true"; 
-        document.designMode = "on"; 
+        document.body.contentEditable = "true";
+        document.designMode = "on";
     }
 
     function disableEdit()
@@ -30,6 +29,25 @@ function main()
             lnkelem.href = newFavicon;
           }
         }
+    }
+    
+    function scanLocalStorage() {
+      let lsitems = [];
+
+      for (let i = 0; i < localStorage.length; i++) {
+        lsitems.push(localStorage.key(i));
+      }
+      
+      alert(lsitems);
+    }
+    
+    function setLocalStorage() {
+      const stname = window.prompt("Which localStorage variable to modify?");
+      const stval = window.prompt("What to set the value to?");
+      
+      localStorage.setItem(stname, stval);
+      
+      alert("Done!");
     }
     
     function addInspectElement()
@@ -154,7 +172,13 @@ function main()
         addInspectElement();
     });
     
+    menu.addOption("[BETA] Scan localStorage", () => {
+      scanLocalStorage();
+    });
+    
+    menu.addOption("[BETA] Set localStorage", () => {
+      setLocalStorage();
+    });
+    
     menu.prompt();
-}
-
-main();
+}());
