@@ -1,4 +1,4 @@
-(function () {
+(async function () {
     const VERSION = "1.1.2";
     
     function enableEdit()
@@ -35,7 +35,7 @@
       let lsitems = "";
 
       for (let i = 0; i < localStorage.length; i++) {
-        lsitems += localStorage.key(i) + "\n";
+        lsitems += localStorage.key(i) + "\n\n";
       }
       
       alert(lsitems);
@@ -130,6 +130,7 @@
             const newVersion = (await newVersion_rq.text()).slice(0, -1);
             const upToDate = newVersion == VERSION;
             let promptString = "JSMenu " + VERSION + (upToDate ? " | Up-to-date" : " | NEW VERSION AVAILABLE (" + newVersion + ")");
+            
             let i = 0;
             for (const option of this.options)
             {
